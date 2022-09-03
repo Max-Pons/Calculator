@@ -1,0 +1,190 @@
+@import url('https://fonts.googleapis.com/css2?family=Silkscreen&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Shadows+Into+Light&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Uncial+Antiqua&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Mali&display=swap');
+
+* {
+    box-sizing: border-box;
+}
+
+body {
+    display: flex; 
+    margin: 0;
+    height: 100vh;
+}
+
+body #container{
+    display: flex;
+    flex: 1;
+    background-color: black;
+}
+
+#container #left,
+#container #right {
+    flex: 6;
+}
+
+#container #center {
+    flex: auto;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    background-color: black;
+}
+
+#center #head{
+    flex: auto;
+    margin: 0;
+    text-align: center;
+    color: #efefef;
+    font-family: "Mali";
+}
+
+
+#center #foot {
+    flex: auto;
+    display: flex;
+    flex-direction: column;
+    color: #efefef;
+    align-items: center;
+    justify-content: flex-end;
+}
+
+#foot p {
+    flex: auto;
+    display: flex;
+    align-items: flex-end;
+    margin: 0%;
+    font-family: "Mali";
+}
+
+#center #calculatorContainer {
+    
+    display: flex;
+    margin: 1px;
+    height: 500px;
+}
+
+#calculatorContainer #calculator {
+    flex: auto;
+    border-radius: 40px;
+    box-shadow: 0px 0px 400px blueviolet;
+    margin: 5px;
+    background-color: black;
+}
+
+#calculator {
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
+    padding: 15px;
+    width: 0;
+}
+
+#calculator #displayRow {
+    display: flex;
+    margin: 10px;
+    border-radius: 30px;
+    height: 70px;
+    background-color: black;
+    box-shadow:0px 0px 8px #efefef;
+    font-family:  Silkscreen;
+    font-size: 20px;
+    color: #efefef;
+    flex: 1;
+}
+
+#displayRow p {
+    flex: 1;
+    border-radius: 30px;
+    margin: 0%;
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+    padding-right: 7px;
+}
+
+#calculator #rowTwo,
+#calculator #rowThree,
+#calculator #rowFour {
+    flex: 1;
+}
+
+#calculator #rowFive {
+    flex: 1;
+}
+
+#rowTwo,
+#rowThree,
+#rowFour,
+#rowFive {
+    display: flex;
+    gap: 3px;
+}
+#rowTwo #delClear,
+#rowThree #divideMulti,
+#rowFour #addSubs {
+    display: flex;
+    flex-direction: column;
+    flex: 2;
+    font-size: 30px;
+    gap: 7px;
+    align-items: center;
+    justify-content: center;
+}
+
+#rowTwo button,
+#rowThree button,
+#rowFour button {
+    flex: 1;
+    border: 0;
+    border-radius: 10px;
+    box-shadow: 2px 2px 1px rgb(255, 255, 255);
+    background-color: rgb(157, 140, 184);
+    font-family: "Mali";
+} 
+
+#delClear button {
+    background-color:rgb(218, 55, 34);
+    border-radius: 10px;
+    width: 120px;
+}
+
+#divideMulti button,
+#addSubs button {
+    background-color: rgb(115, 74, 180);
+    width: 120px;
+    border-radius: 10px;
+}
+
+#rowTwo button:hover,
+#rowThree button:hover,
+#rowFour button:hover,
+#rowFive button:hover  {
+    color: #efefef; 
+} 
+
+#rowTwo button:active,
+#rowThree button:active,
+#rowFour button:active,
+#rowFive button:active {
+    box-shadow: 0px 0px 5px rgb(255, 255, 255);
+    transform: scale(0.96)
+}
+
+#rowFive button {
+    flex: 1;
+    border: 0;
+    border-radius: 15px;
+    box-shadow: 2px 2px 1px rgb(255, 255, 255);
+    background-color: rgb(157, 140, 184);
+}
+
+
+#rowFive #equal {
+    flex: 3;
+    font-size: 30px;
+    background-color: rgb(60, 236, 75);
+    border-radius: 25px;
+    
+}
