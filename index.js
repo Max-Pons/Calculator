@@ -159,7 +159,7 @@
 
         numberZero.addEventListener(`click`, () => {
             
-            if (resultDisplay.length < 17) {
+            if (resultDisplay.length < 15) {
                 resultDisplay.push(0);
                 val1.push(0);
                 displayCharacters(resultDisplay)
@@ -169,7 +169,7 @@
 
         numberOne.addEventListener(`click`, () => {
             
-            if (resultDisplay.length < 17) {
+            if (resultDisplay.length < 15) {
                 resultDisplay.push(1);
                 val1.push(1);             
                 displayCharacters(resultDisplay)
@@ -179,7 +179,7 @@
 
         numberTwo.addEventListener(`click`, () => {
             
-            if (resultDisplay.length < 17) {
+            if (resultDisplay.length < 15) {
                 resultDisplay.push(2);
                 val1.push(2);
                 displayCharacters(resultDisplay)
@@ -189,7 +189,7 @@
 
         numberThree.addEventListener(`click`, () => {
            
-            if (resultDisplay.length < 17) {
+            if (resultDisplay.length < 15) {
                 resultDisplay.push(3);
                 val1.push(3);
                 displayCharacters(resultDisplay)
@@ -199,7 +199,7 @@
 
         numberFour.addEventListener(`click`, () => {
            
-            if (resultDisplay.length < 17) {
+            if (resultDisplay.length < 15) {
                 resultDisplay.push(4);
                 val1.push(4);
                 displayCharacters(resultDisplay)
@@ -209,7 +209,7 @@
 
         numberFive.addEventListener(`click`, () => {
         
-            if (resultDisplay.length < 17) {
+            if (resultDisplay.length < 15) {
                 resultDisplay.push(5);
                 val1.push(5);
                 displayCharacters(resultDisplay)
@@ -227,7 +227,7 @@
 
         numberSeven.addEventListener(`click`, () => {
            
-            if (resultDisplay.length < 17) {
+            if (resultDisplay.length < 15) {
                 resultDisplay.push(7);
                 val1.push(7);
                 displayCharacters(resultDisplay)
@@ -237,7 +237,7 @@
 
         numberEight.addEventListener(`click`, () => {
        
-            if (resultDisplay.length < 17) {
+            if (resultDisplay.length < 15) {
                 resultDisplay.push(8);
                 val1.push(8);
                 displayCharacters(resultDisplay)
@@ -247,7 +247,7 @@
 
         numberNine.addEventListener(`click`, () => {
         
-            if (resultDisplay.length < 17) {
+            if (resultDisplay.length < 15) {
                 resultDisplay.push(9);
                 val1.push(9);
                 displayCharacters(resultDisplay)
@@ -263,7 +263,7 @@
 
         add.addEventListener(`click`, () => {
             
-            if (resultDisplay.length < 17 && resultDisplay.length > 0 && addCheck === false &&  substractCheck === false 
+            if (resultDisplay.length < 18 && resultDisplay.length > 0 && addCheck === false &&  substractCheck === false 
                 && divideCheck === false && multiplyCheck === false) {
                 resultDisplay.push(`+`);
                 addOp = true;
@@ -283,7 +283,7 @@
 
         substract.addEventListener(`click`, () => {
           
-            if (resultDisplay.length < 17 && resultDisplay.length > 0 && addCheck === false &&  substractCheck === false 
+            if (resultDisplay.length < 18 && resultDisplay.length > 0 && addCheck === false &&  substractCheck === false 
                 && divideCheck === false && multiplyCheck === false) {
                 resultDisplay.push(`-`);
                 subsOp = true;
@@ -302,7 +302,7 @@
 
         divide.addEventListener(`click`, () => {
            
-            if (resultDisplay.length < 17 && resultDisplay.length > 0 && addCheck === false &&  substractCheck === false 
+            if (resultDisplay.length < 18 && resultDisplay.length > 0 && addCheck === false &&  substractCheck === false 
                 && divideCheck === false && multiplyCheck === false) {
                 resultDisplay.push(`÷`);
                 divideOp = true;
@@ -321,7 +321,7 @@
 
         multiply.addEventListener(`click`, () => {
          
-            if (resultDisplay.length < 17 && resultDisplay.length > 0 && addCheck === false &&  substractCheck === false 
+            if (resultDisplay.length < 18 && resultDisplay.length > 0 && addCheck === false &&  substractCheck === false 
                 && divideCheck === false && multiplyCheck === false) {
                 resultDisplay.push(`X`);
                 multiplyOp = true;
@@ -346,8 +346,8 @@
             val1 = [];
                 
             if (addOp === true) {
-                resultDisplay = [];
-                resultDisplay.push(num1 + num2);;
+                resultDisplay = [];  
+                resultDisplay.push(+(Number(num1) + Number(num2)).toFixed(2));
                 val1.push(num1 + num2);
                 displayCharacters(resultDisplay)
                 console.log(`${val1}`)
@@ -360,7 +360,7 @@
                 }
                     else if (subsOp === true) {
                         resultDisplay = [];
-                        resultDisplay.push(Number(num1) - Number(num2));;
+                        resultDisplay.push(+(Number(num1) - Number(num2)).toFixed(2));
                         val1.push(Number(num1) - Number(num2));
                         displayCharacters(resultDisplay)
                         console.log(`${val1}`)
@@ -381,7 +381,7 @@
                         }
                         else {
                         resultDisplay = [];
-                        resultDisplay.push(Number(num1) / Number(num2));;
+                        resultDisplay.push(+(Number(num1) / Number(num2)).toFixed(2));
                         val1.push(Number(num1) / Number(num2));
                         displayCharacters(resultDisplay)
                         console.log(`${val1}`)
@@ -395,7 +395,7 @@
                 }   
                     else if (multiplyOp === true) {
                         resultDisplay = [];
-                        resultDisplay.push(Number(num1) * Number(num2));;
+                        resultDisplay.push(+(Number(num1) * Number(num2)).toFixed(2));
                         val1.push(Number(num1) * Number(num2));
                         displayCharacters(resultDisplay)
                         console.log(`${val1}`)
@@ -409,7 +409,250 @@
 
         })
 
+        window.addEventListener(`keydown`, e =>{
+            type(e);
+            console.log(e);
+        })
+
+        function type(e) {      
+       
+            if (resultDisplay.length < 18 && resultDisplay.length > 0 && addCheck === false &&  substractCheck === false 
+                && divideCheck === false && multiplyCheck === false && (e.keyCode === 107 
+                || e.keyCode === 187)) {
+                resultDisplay.push(`+`);
+                addOp = true;
+                addCheck = true;
+                substractCheck = true;
+                divideCheck = true;
+                multiplyCheck = true;
+                dotCheck = false;
+                num1 = val1.join(``);
+                console.log(num1)  
+                num1 = Number(num1);
+                val1 = [];
+                displayCharacters(resultDisplay)
+            }
+                else  if (resultDisplay.length < 18 && resultDisplay.length > 0 && addCheck === false &&  substractCheck === false 
+                    && divideCheck === false && multiplyCheck === false && (e.keyCode === 109 
+                    || e.keyCode === 189)) {
+                    resultDisplay.push(`-`);
+                    subsOp = true;
+                    addCheck = true;
+                    substractCheck = true;
+                    divideCheck = true;
+                    multiplyCheck = true;
+                    dotCheck = false;
+                    num1 = val1.join(``);
+                    num1 = Number(num1);
+                    val1 = [];
+                    displayCharacters(resultDisplay)
+                }
+
+                else if (resultDisplay.length < 18 && resultDisplay.length > 0 && addCheck === false &&  substractCheck === false 
+                    && divideCheck === false && multiplyCheck === false && e.keyCode === 111) {
+                    resultDisplay.push(`÷`);
+                    divideOp = true;
+                    addCheck = true;
+                    substractCheck = true;
+                    divideCheck = true;
+                    multiplyCheck = true;
+                    dotCheck = false;
+                    num1 = val1.join(``);
+                    num1 = Number(num1);
+                    val1 = [];
+                    displayCharacters(resultDisplay)
+                }
+
+                else if (resultDisplay.length < 18 && resultDisplay.length > 0 && addCheck === false &&  substractCheck === false 
+                    && divideCheck === false && multiplyCheck === false && (e.keyCode === 106)) {
+                    resultDisplay.push(`X`);
+                    multiplyOp = true;
+                    addCheck = true;
+                    substractCheck = true;
+                    divideCheck = true;
+                    multiplyCheck = true;
+                    dotCheck = false;
+                    num1 = val1.join(``);
+                    num1 = Number(num1);
+                    val1 = [];
+                    displayCharacters(resultDisplay)
+                }
+
+                    else if (resultDisplay.length < 15 && (e.keyCode === 48 || e.keyCode === 96)) {
+   
+                            resultDisplay.push(0);
+                            val1.push(0);
+                            displayCharacters(resultDisplay)
+                        
+                    }
+
+                    else if (resultDisplay.length < 15 && (e.keyCode === 49 || e.keyCode === 97)) {
+   
+                        resultDisplay.push(1);
+                        val1.push(1);
+                        displayCharacters(resultDisplay)
+                    
+                    }
+
+                    else if (resultDisplay.length < 15 && (e.keyCode === 50 || e.keyCode === 98)) {
+   
+                        resultDisplay.push(2);
+                        val1.push(2);
+                        displayCharacters(resultDisplay)
+                    
+                    } 
+                    
+                    else if (resultDisplay.length < 15 && (e.keyCode === 51 || e.keyCode === 99)) {
+   
+                        resultDisplay.push(3);
+                        val1.push(3);
+                        displayCharacters(resultDisplay)
+                
+                    }
+
+                    else if (resultDisplay.length < 15 && (e.keyCode === 52 || e.keyCode === 100)) {
+   
+                        resultDisplay.push(4);
+                        val1.push(4);
+                        displayCharacters(resultDisplay)
+                    
+                    }
+
+                    else if (resultDisplay.length < 15 && (e.keyCode === 53 || e.keyCode === 101)) {
+   
+                        resultDisplay.push(5);
+                        val1.push(5);
+                        displayCharacters(resultDisplay)
+                    
+                    }
+
+                    else if (resultDisplay.length < 15 && (e.keyCode === 54 || e.keyCode === 102)) {
+   
+                        resultDisplay.push(6);
+                        val1.push(6);
+                        displayCharacters(resultDisplay)
+                    
+                    }
+
+                    else if (resultDisplay.length < 15 && (e.keyCode === 55 || e.keyCode === 103)) {
+   
+                        resultDisplay.push(7);
+                        val1.push(7);
+                        displayCharacters(resultDisplay)
+                    
+                    }
+
+                    else if (resultDisplay.length < 15 && (e.keyCode === 56 || e.keyCode === 104)) {
+   
+                        resultDisplay.push(8);
+                        val1.push(8);
+                        displayCharacters(resultDisplay)
+                    
+                    }
+
+                    else if (resultDisplay.length < 15 && (e.keyCode === 57 || e.keyCode === 105)) {
+   
+                        resultDisplay.push(9);
+                        val1.push(9);
+                        displayCharacters(resultDisplay)
+                    
+                    }
 
 
+            if (e.keyCode === 13) {
+                num2 = val1.join(``);
+                console.log(num2)  
+                num2 = Number(num2);          
+                val1 = [];
+                
+                if (addOp === true) {
+                    resultDisplay = [];  
+                    resultDisplay.push(+(Number(num1) + Number(num2)).toFixed(2));
+                    val1.push(num1 + num2);
+                    displayCharacters(resultDisplay)
+                    console.log(`${val1}`)
+                    addOp = false;
+                    addCheck = false;
+                    substractCheck = false;
+                    divideCheck = false;
+                    multiplyCheck = false;
+                    dotCheck = false;
+                    }
+                        else if (subsOp === true) {
+                            resultDisplay = [];
+                            resultDisplay.push(+(Number(num1) - Number(num2)).toFixed(2));
+                            val1.push(Number(num1) - Number(num2));
+                            displayCharacters(resultDisplay)
+                            console.log(`${val1}`)
+                            subsOp = false;
+                            addCheck = false;
+                            substractCheck = false;
+                            divideCheck = false;
+                            multiplyCheck = false;
+                            dotCheck = false;
+                    }
+                        else if (divideOp === true) {
 
+                            if (num2 === 0) {
+                                resultDisplay = [];
+                                msg = `Its huh... at least 40.`
+                                resultDisplay.push(msg)
+                                displayCharacters(resultDisplay)
+                            }
+                            else {
+                            resultDisplay = [];
+                            resultDisplay.push(+(Number(num1) / Number(num2)).toFixed(2));
+                            val1.push(Number(num1) / Number(num2));
+                            displayCharacters(resultDisplay)
+                            console.log(`${val1}`)
+                            divideOp = false;
+                            addCheck = false;
+                            substractCheck = false;
+                            divideCheck = false;
+                            multiplyCheck = false;
+                            dotCheck = false;
+                            }
+                    }   
+                        else if (multiplyOp === true) {
+                            resultDisplay = [];
+                            resultDisplay.push(+(Number(num1) * Number(num2)).toFixed(2));
+                            val1.push(Number(num1) * Number(num2));
+                            displayCharacters(resultDisplay)
+                            console.log(`${val1}`)
+                            multiplyOp = false;
+                            addCheck = false;
+                            substractCheck = false;
+                            divideCheck = false;
+                            multiplyCheck = false;
+                            dotCheck = false;
+                    }
+                }
 
+            if (e.keyCode === 8) {
+                resultDisplay.pop();
+                displayCharacters(resultDisplay)
+                addCheck = false;
+                addCheck = false;
+                substractCheck = false;
+                divideCheck = false;
+                multiplyCheck = false;
+                dotCheck = false;
+            }
+
+            if (e.keyCode === 190 || e.keyCode === 110) {
+              
+                if (resultDisplay.length < 17 && resultDisplay.length > 0 && dotCheck === false) {
+                    resultDisplay.push(`.`);
+                    val1.push(`.`);
+                    displayCharacters(resultDisplay)
+                    dotCheck = true;
+                }
+        }
+    }
+
+    
+
+/* Things to update:
+        Improve the decimal round to avoid possible errors in a result.
+        Find a way to use keyboard shortcuts to write * & /;
+    */

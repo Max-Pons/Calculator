@@ -59,17 +59,18 @@ body #container{
 }
 
 #center #calculatorContainer {
-    
+    box-shadow: 0px 0px 400px skyblue;
+    border-radius: 40px;
     display: flex;
     margin: 1px;
-    height: 500px;
+    height: 480px;
 }
 
 #calculatorContainer #calculator {
     flex: auto;
     border-radius: 40px;
-    box-shadow: 0px 0px 400px blueviolet;
-    margin: 5px;
+    box-shadow: inset 0px 0px 8px #efefef;
+    margin: 0px;
     background-color: black;
 }
 
@@ -79,6 +80,7 @@ body #container{
     gap: 5px;
     padding: 15px;
     width: 0;
+    color: skyblue;
 }
 
 #calculator #displayRow {
@@ -87,10 +89,10 @@ body #container{
     border-radius: 30px;
     height: 70px;
     background-color: black;
-    box-shadow:0px 0px 8px #efefef;
+    box-shadow: inset 0px 0px 80px skyblue;
     font-family:  Silkscreen;
-    font-size: 20px;
-    color: #efefef;
+    color: #ffffff;
+    font-weight: 900;
     flex: 1;
 }
 
@@ -102,6 +104,7 @@ body #container{
     justify-content: flex-end;
     align-items: center;
     padding-right: 7px;
+ 
 }
 
 #calculator #rowTwo,
@@ -139,20 +142,20 @@ body #container{
     flex: 1;
     border: 0;
     border-radius: 10px;
-    box-shadow: 2px 2px 1px rgb(255, 255, 255);
-    background-color: rgb(157, 140, 184);
+    box-shadow: inset 0px 0px 6px rgb(255, 255, 255);
+    background-color: rgb(189, 227, 241);
     font-family: "Mali";
 } 
 
 #delClear button {
-    background-color:rgb(218, 55, 34);
+    background-color:rgb(218, 34, 34);
     border-radius: 10px;
     width: 120px;
 }
 
 #divideMulti button,
 #addSubs button {
-    background-color: rgb(115, 74, 180);
+    background-color: rgb(143, 210, 235);
     width: 120px;
     border-radius: 10px;
 }
@@ -168,7 +171,7 @@ body #container{
 #rowThree button:active,
 #rowFour button:active,
 #rowFive button:active {
-    box-shadow: 0px 0px 5px rgb(255, 255, 255);
+    box-shadow: inset 0px 0px 3px rgb(0, 0, 0);
     transform: scale(0.96)
 }
 
@@ -176,8 +179,8 @@ body #container{
     flex: 1;
     border: 0;
     border-radius: 15px;
-    box-shadow: 2px 2px 1px rgb(255, 255, 255);
-    background-color: rgb(157, 140, 184);
+    box-shadow: inset 0px 0px 6px rgb(255, 255, 255);
+    background-color: rgb(189, 227, 241);
 }
 
 
